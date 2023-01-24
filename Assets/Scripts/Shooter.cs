@@ -26,7 +26,7 @@ public class Shooter : MonoBehaviour
                 tmpBullet = Instantiate(bullet, originBullet.position, Quaternion.identity);
 
                 //orientacion de la bala por medio del uso del transform originbullet
-                tmpBullet.transform.up = originBullet.transform.forward;
+                tmpBullet.transform.right = originBullet.transform.forward;
 
                 //se agrega la fuerzo a la bala
                 tmpBullet.GetComponent<Rigidbody>().AddForce(originBullet.forward * bulletForce, ForceMode.Impulse);
