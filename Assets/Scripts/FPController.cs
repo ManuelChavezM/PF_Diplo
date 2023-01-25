@@ -14,6 +14,10 @@ public class FPController : MonoBehaviour
     private bool locked;
 
     public float jumpForce = 5f;
+
+    public Shooter Arma;
+
+
     private void Start()
     {
         //se le indica que traiga el componente rgidbody 
@@ -65,6 +69,20 @@ public class FPController : MonoBehaviour
         {
             fprb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
+
+
+
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.tag == "Cargador")
+        {
+            Arma.Municion = 5;
+            Destroy(collision.gameObject);
+
+        }
+
 
     }
 
