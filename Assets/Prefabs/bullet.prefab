@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7934417277783073165}
   - component: {fileID: 3568987307614807203}
   - component: {fileID: 589628081489504775}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line062
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 7808793895119469665}
   - component: {fileID: 4316740172678360340}
   - component: {fileID: 5228330436508137542}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Line061
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -179,7 +179,8 @@ GameObject:
   - component: {fileID: 7729929808963220450}
   - component: {fileID: 3760258464723510956}
   - component: {fileID: 7845596930273339539}
-  m_Layer: 0
+  - component: {fileID: 6228721114877017408}
+  m_Layer: 7
   m_Name: bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -233,3 +234,17 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6228721114877017408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6921446142157056344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea843088ecda45740b4e04730b635223, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  explotion: {fileID: 8831255640424744209, guid: 77c89c230daeb0f41bf1fa4ad9bf2072,
+    type: 3}
