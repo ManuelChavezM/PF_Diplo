@@ -6,11 +6,13 @@ public class WeaponManager : MonoBehaviour
 {
     public GameObject[] Weapons;
     public GameObject Disparos;
+    public GameObject Knife;
     // Start is called before the first frame update
     void Start()
     {
         ClearWeapons();
         Weapons[0].SetActive(true);
+        Knife.SetActive(false);
 
     }
 
@@ -23,6 +25,7 @@ public class WeaponManager : MonoBehaviour
                 Weapons[0].SetActive(false);
                 Disparos.SetActive(false);
                 Weapons[1].SetActive(true);
+                Knife.SetActive(true);
             }
             else
             {
@@ -31,6 +34,7 @@ public class WeaponManager : MonoBehaviour
                     Weapons[1].SetActive(false);
                     Disparos.SetActive(true);
                     Weapons[0].SetActive(true);
+                    Knife.SetActive(false);
                 }
             }
 
