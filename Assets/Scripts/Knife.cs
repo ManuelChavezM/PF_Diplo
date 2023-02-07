@@ -28,7 +28,7 @@ public class Knife : MonoBehaviour
             mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
             //Devuelve un bool
-            if (Physics.Raycast(mouseRay, out mouseHit, 150f, mouseMask))
+            if (Physics.Raycast(mouseRay, out mouseHit, 10f, mouseMask))
             {
                 //if (mouseHit.transform.tag == "Enemy")
                 //{

@@ -18,7 +18,7 @@ public class WeaponManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown("q"))
+        if (Input.GetKeyDown(KeyCode.Q))
         {
             if (Weapons[0].activeInHierarchy)
             {
