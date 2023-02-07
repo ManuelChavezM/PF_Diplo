@@ -22,8 +22,8 @@ public class EnemyController : MonoBehaviour
 
     public float Vida;
     public float vidaMax;
-    /*public Image imgVida;
-    private float valueLifeEnemy;*/
+    public Image imgVida;
+    private float valueLifeEnemy;
 
     private int D = 0;
 
@@ -80,13 +80,13 @@ public class EnemyController : MonoBehaviour
 
         enemyAnimator.SetFloat("speed", enemyAgent.velocity.sqrMagnitude);
 
-        /*
+        
         if (Vida < vidaMax && Vida != 0)
         {
             valueLifeEnemy = Vida / vidaMax;
             imgVida.fillAmount = valueLifeEnemy;
 
-        }*/
+        }
 
 
         if (Vida == 0)
@@ -97,7 +97,7 @@ public class EnemyController : MonoBehaviour
             VidaCero();
         }
 
-       /* Lifebar();*/
+        Lifebar();
 
     }
 
@@ -173,7 +173,7 @@ public class EnemyController : MonoBehaviour
         Destroy(this.gameObject);
     }
 
-    /*public void Lifebar()
+    public void Lifebar()
     {
         if (imgVida.fillAmount >= 0.7f)
         {
@@ -192,7 +192,7 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-    }*/
+    }
 
 
 }
