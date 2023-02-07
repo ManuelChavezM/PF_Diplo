@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FPController : MonoBehaviour
 {
@@ -52,10 +53,10 @@ public class FPController : MonoBehaviour
         movement.y = yVel;
         fprb.velocity = movement;
 
-        if (Input.GetKeyDown(KeyCode.Space))
+       /* if (Input.GetKeyDown(KeyCode.Space))
         {
             fprb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }
+        }*/
 
         if( vida <= 0)
         {
@@ -66,7 +67,7 @@ public class FPController : MonoBehaviour
 
     public void VidaCero()
     {
-
+        SceneManager.LoadScene(1);
     }
 
     private void OnCollisionEnter(Collision collision)

@@ -134,13 +134,6 @@ public class EnemyController : MonoBehaviour
                 CancelInvoke("GenerateRandomDestination");
             }
         }
-        else
-        {
-            currentState = EnemyState.PATROL;
-            UpdateState();
-        }
-
-
     }
 
     public void VerificarAnimacion()

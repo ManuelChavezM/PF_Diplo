@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1741620020462409895}
   - component: {fileID: 3424039441697724162}
   - component: {fileID: 603577951497298888}
+  - component: {fileID: -4106481511972437567}
   m_Layer: 8
   m_Name: cuchillo
-  m_TagString: Untagged
+  m_TagString: knife
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,3 +85,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!95 &-4106481511972437567
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1396303363161621021}
+  m_Enabled: 1
+  m_Avatar: {fileID: 9000000, guid: 7ca1b790c9b307f4582352d056849e40, type: 3}
+  m_Controller: {fileID: 9100000, guid: 3c0f6186d9d4eb44c834973cc537a82b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
