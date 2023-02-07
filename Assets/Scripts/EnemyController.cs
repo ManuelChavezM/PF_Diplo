@@ -127,7 +127,7 @@ public class EnemyController : MonoBehaviour
         Debug.Log("Collision with: " + other.gameObject.name);
         if (other.transform.CompareTag("Player"))
         {
-            enemyAnimator.SetBool("PlayerDetectado", true);
+            enemyAnimator.SetBool("playerDetectado", true);
             if (currentState == EnemyState.PATROL)
             {
                 currentState = EnemyState.CHASE;
