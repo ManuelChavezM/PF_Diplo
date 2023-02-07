@@ -44,23 +44,8 @@ public class FPController : MonoBehaviour
         yVel = fprb.velocity.y;
 
         //Movimiento del jugador con el teclado
-        /* transform.Translate(Vector3.forward * speed * Time.deltaTime * Input.GetAxis("Vertical"));
-         transform.Translate(Vector3.right * speed * Time.deltaTime * Input.GetAxis("Horizontal"));*/
 
         transform.Rotate(Vector3.up * speedRotation * Time.deltaTime * Input.GetAxis("Mouse X"));
-
-        //Formas de rotar el transform de la camera
-        /*cameraTransform.Rotate(Vector3.right * speedRotation * -Input.GetAxis("Mouse Y"));*/
-
-        //transform.GetChild(0).Rotate(Vector3.right * speedRotation * -Input.GetAxis("Mouse Y"));
-
-        // Camera.main.transform.Rotate(Vector3.right * speedRotation * Time.deltaTime * -Input.GetAxis("Mouse Y"));
-
-
-
-        /*movement = transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical");
-        movement += transform.right * speed * Time.deltaTime * Input.GetAxis("Horizontal");*/
-
         movement = Camera.main.transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical");
         movement += Camera.main.transform.right * speed * Time.deltaTime * Input.GetAxis("Horizontal");
 
@@ -72,7 +57,15 @@ public class FPController : MonoBehaviour
             fprb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
+        if( vida <= 0)
+        {
+            VidaCero();
+        }
 
+    }
+
+    public void VidaCero()
+    {
 
     }
 
