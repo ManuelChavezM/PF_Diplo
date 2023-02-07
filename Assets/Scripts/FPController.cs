@@ -17,6 +17,8 @@ public class FPController : MonoBehaviour
 
     public Shooter Arma;
 
+    public float vida;
+
 
     private void Start()
     {
