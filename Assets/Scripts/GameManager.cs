@@ -71,6 +71,11 @@ public class GameManager : MonoBehaviour
         txtCargador.text = "" + cargador;
     }
 
+    public void TextoBalas(int balas)
+    {
+        txtBalas.text = "" + balas;
+    }
+
     public void Salir()
     {
         Application.Quit();

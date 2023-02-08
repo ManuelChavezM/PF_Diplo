@@ -36,5 +36,7 @@ public class Shooter : MonoBehaviour
 
 
         }
+
+        GameManager.instanceGameManager.TextoBalas(Municion);
     }
 }

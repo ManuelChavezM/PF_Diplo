@@ -34,7 +34,9 @@ public class Knife : MonoBehaviour
             {
                 knifeAnimator.SetTrigger("ataque");
             }
-            
+           
+
+
             //Devuelve un bool
             if (Physics.Raycast(mouseRay, out mouseHit, 1.2f, mouseMask))
             {
