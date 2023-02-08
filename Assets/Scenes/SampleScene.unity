@@ -962,7 +962,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: ed31c895da73ad24bbed27f230179aac, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4580038ba0dbdd42b214c1214e49d96, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1465,6 +1465,7 @@ MonoBehaviour:
   rifle: {fileID: 21300000, guid: a14a03bab50a79d488a8c6fc296e6769, type: 3}
   spriteKnife: {fileID: 21300000, guid: d84edbe8cc878be48b07d34f3335d140, type: 3}
   imgWeapon: {fileID: 809531558}
+  cuchillo: {fileID: 0}
 --- !u!4 &827423452
 Transform:
   m_ObjectHideFlags: 0
@@ -2766,7 +2767,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 574065295579559745}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 7ca1b790c9b307f4582352d056849e40, type: 3}
   m_Controller: {fileID: 9100000, guid: 3c0f6186d9d4eb44c834973cc537a82b, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

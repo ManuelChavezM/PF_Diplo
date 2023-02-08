@@ -27,15 +27,11 @@ public class Knife : MonoBehaviour
     void Update()
     {
      
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && knifeAnimator.GetCurrentAnimatorStateInfo(0).IsName("New State"))
         {
             mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
-            if (knifeAnimator.GetCurrentAnimatorStateInfo(0).IsName("New State"))
-            {
-                knifeAnimator.SetTrigger("ataque");
-            }
-           
-
+            knifeAnimator.SetTrigger("ataque");
+            knifeAnimator.SetBool("active", true);
 
             //Devuelve un bool
             if (Physics.Raycast(mouseRay, out mouseHit, 1.2f, mouseMask))
@@ -47,6 +43,11 @@ public class Knife : MonoBehaviour
 
             }
         }
+        if (knifeAnimator.GetCurrentAnimatorStateInfo(0).IsName("CuchilloAttack"))
+        {
+            knifeAnimator.SetBool("active", false);
+        }
+        
 
     }
 }

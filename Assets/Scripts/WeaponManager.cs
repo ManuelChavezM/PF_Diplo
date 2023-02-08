@@ -10,7 +10,9 @@ public class WeaponManager : MonoBehaviour
     public Sprite rifle;
     public Sprite spriteKnife;
     public Image imgWeapon;
-  
+    public Animator cuchillo;
+ 
+
 
 
     // Start is called before the first frame update
@@ -20,7 +22,7 @@ public class WeaponManager : MonoBehaviour
         Weapons[0].SetActive(true);
         Knife.SetActive(false);
         imgWeapon.sprite = rifle;
-        
+        cuchillo = Weapons[1].GetComponent<Animator>();
       
   
 
@@ -37,13 +39,12 @@ public class WeaponManager : MonoBehaviour
                 Weapons[1].SetActive(true);
                 Knife.SetActive(true);
                 imgWeapon.sprite = spriteKnife;
-               
 
 
             }
             else
             {
-                if (Weapons[1].activeInHierarchy) // activacion rifle
+                if (Weapons[1].activeInHierarchy && cuchillo.GetBool("active") == false) // activacion rifle
                 {
                     Weapons[1].SetActive(false);
                     Disparos.SetActive(true);
@@ -54,6 +55,8 @@ public class WeaponManager : MonoBehaviour
             }
 
         }
+
+    
         
     }
 
