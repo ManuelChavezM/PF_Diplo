@@ -19,7 +19,7 @@ public class Shooter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && GameManager.instanceGameManager.panelGameplay.activeInHierarchy)
         {
             if (Municion != 0)
             {

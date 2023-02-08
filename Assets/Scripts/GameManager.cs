@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instanceGameManager;
     public GameObject panelGameplay;
     public GameObject panelPausa;
+    public GameObject panelOpciones;
     public TMP_Text txtBalas;
     public TMP_Text txtCargador;
     public Image imgVida;
@@ -23,6 +24,7 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         panelPausa.SetActive(false);
+        panelOpciones.SetActive(false);
         panelGameplay.SetActive(true);
         //musica.UnPause();
         //AudioManager.instanceAudioManager.musica.UnPause();
@@ -33,10 +35,23 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0; //detener todos los procesos con animacion y codigo pero no de interfaz
         panelPausa.SetActive(true);
         panelGameplay.SetActive(false);
+        panelOpciones.SetActive(false);
         //AudioManager.instanceAudioManager.musica.Pause();
         // musica.Pause();
         //musica.Pause();
     }
+
+    public void Opciones()
+    {
+        Time.timeScale = 0; //detener todos los procesos con animacion y codigo pero no de interfaz
+        panelPausa.SetActive(false);
+        panelGameplay.SetActive(false);
+        panelOpciones.SetActive(true);
+        //AudioManager.instanceAudioManager.musica.Pause();
+        // musica.Pause();
+        //musica.Pause();
+    }
+
 
     // Update is called once per frame
     void Update()
@@ -78,6 +93,7 @@ public class GameManager : MonoBehaviour
 
     public void Salir()
     {
+        Debug.Log("SALISTE DEL JUEGO");
         Application.Quit();
     }
 

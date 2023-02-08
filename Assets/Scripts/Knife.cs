@@ -11,6 +11,7 @@ public class Knife : MonoBehaviour
     private GameObject enemigo;
     private GameObject cuchillo;
     public Animator knifeAnimator;
+    public GameObject OrigenRay;
     
 
 
@@ -27,9 +28,10 @@ public class Knife : MonoBehaviour
     void Update()
     {
      
-        if (Input.GetMouseButtonDown(0) && knifeAnimator.GetCurrentAnimatorStateInfo(0).IsName("New State"))
+        if (Input.GetMouseButtonDown(0) && knifeAnimator.GetCurrentAnimatorStateInfo(0).IsName("New State") && GameManager.instanceGameManager.panelGameplay.activeInHierarchy)
         {
-            mouseRay = Camera.main.ScreenPointToRay(Input.mousePosition);
+            mouseRay = new Ray(OrigenRay.transform.position,OrigenRay.transform.forward);
+            Debug.DrawRay(mouseRay.origin, mouseRay.direction, Color.blue, 10f);
             knifeAnimator.SetTrigger("ataque");
             knifeAnimator.SetBool("active", true);
 
