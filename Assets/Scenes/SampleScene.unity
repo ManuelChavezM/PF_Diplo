@@ -455,6 +455,8 @@ MonoBehaviour:
   jumpForce: 5
   Arma: {fileID: 2081856345}
   vida: 10
+  vidaMAX: 0
+  LifeValue: 0
 --- !u!54 &150976051
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1615,6 +1617,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 937068839}
+  - component: {fileID: 937068840}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -1637,6 +1640,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &937068840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937068838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86db10591cae1964a868f9c1327d398e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  panelGameplay: {fileID: 748287649}
+  panelPausa: {fileID: 77937398}
+  txtBalas: {fileID: 488605394}
+  txtCargador: {fileID: 679148592}
+  imgVida: {fileID: 2047084660}
+  magazine: 0
 --- !u!1 &969159818
 GameObject:
   m_ObjectHideFlags: 3

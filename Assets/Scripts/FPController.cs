@@ -18,11 +18,15 @@ public class FPController : MonoBehaviour
 
     public Shooter Arma;
 
+    //varibles de para el manejo de la vida y calculo del life bar
     public float vida;
+    public float vidaMAX;
+    public float LifeValue;
 
 
     private void Start()
     {
+        vidaMAX = vida;
         //se le indica que traiga el componente rgidbody 
         fprb = GetComponent<Rigidbody>();
         locked = true;
@@ -63,6 +67,18 @@ public class FPController : MonoBehaviour
             VidaCero();
         }
 
+        if(vida != vidaMAX)
+        {
+            LifeValue = vida / vidaMAX;
+            GameManager.instanceGameManager.ImagenVida(LifeValue);
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && GameManager.instanceGameManager.magazine != 0)
+        {
+            GameManager.instanceGameManager.RestaMagazine();
+            Arma.Municion = 5;
+        }
+
     }
 
     public void VidaCero()
@@ -74,12 +90,14 @@ public class FPController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Cargador")
         {
-            Arma.Municion = 5;
+            
+            GameManager.instanceGameManager.SumaMagazine();
             Destroy(collision.gameObject);
 
         }
 
 
     }
+
 
 }
