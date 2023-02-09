@@ -56,7 +56,7 @@ public class EnemyController : MonoBehaviour
             case EnemyState.CHASE:
                 //perseguir al jugador asignandole la posicion del jugador a partir de su transform
                 enemyAgent.SetDestination(playerTransform.position);  //Validar si alcanza al jugador
-              /*  AudioManager.instanceAudioManager.PlayMusic(1);*/
+                AudioManager.instanceAudioManager.PlayMusic(1);
                 if (enemyAgent.velocity.sqrMagnitude == 0)
                 {
                     currentState = EnemyState.ATTACK;
@@ -91,9 +91,9 @@ public class EnemyController : MonoBehaviour
 
         if (Vida == 0)
         {
-           /* AudioManager.instanceAudioManager.ReproduccionPatrulla = false;
+            AudioManager.instanceAudioManager.ReproduccionPatrulla = false;
             AudioManager.instanceAudioManager.ReproduccionChase = false;
-            AudioManager.instanceAudioManager.PlayMusic(0);*/
+            AudioManager.instanceAudioManager.PlayMusic(0);
             VidaCero();
         }
 
@@ -108,10 +108,10 @@ public class EnemyController : MonoBehaviour
             case EnemyState.PATROL:
                 //corrutina que deice nombre del metodo, off set y tiempo para que lo repita 
                 InvokeRepeating("GenerateRandomDestination", 0f, patrolTime);
-               /* if (AudioManager.instanceAudioManager.ReproduccionChase == false)
+                if (AudioManager.instanceAudioManager.ReproduccionChase == false)
                 {
                     AudioManager.instanceAudioManager.PlayMusic(0);
-                }*/
+                }
                 break;
         }
     }

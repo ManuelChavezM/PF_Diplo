@@ -3140,8 +3140,14 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 06288120615558f479c2e47af5113f59, type: 2}
   musicaCollection:
   - {fileID: 8300000, guid: 8b59eb389b8248140a68bfeacbc5ce36, type: 3}
-  - {fileID: 0}
-  sfxCollection: []
+  - {fileID: 8300000, guid: be58c37be31680547b12a91cf3b5cec5, type: 3}
+  sfxCollection:
+  - {fileID: 8300000, guid: 1f1483d66c99d25428d17540babe500e, type: 3}
+  - {fileID: 8300000, guid: fae325143516d9747bd22aeb83d5fefb, type: 3}
+  - {fileID: 8300000, guid: 07428e7001c8e944c878a5ef36de8256, type: 3}
+  - {fileID: 8300000, guid: e3ebd24de4c3b3648be280f4c9876111, type: 3}
+  - {fileID: 8300000, guid: 7866689f28f080b40950e6e8dc863e0e, type: 3}
+  - {fileID: 8300000, guid: e8a9d229c0aa4824f979b4998a3f47b7, type: 3}
   sliderVolMusica: {fileID: 309513206}
   sliderVolSFX: {fileID: 1534289705}
   sliderVolAmbiente: {fileID: 298493333}
