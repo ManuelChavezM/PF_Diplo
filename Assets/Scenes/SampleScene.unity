@@ -3138,7 +3138,9 @@ MonoBehaviour:
   SFX: {fileID: 754058354}
   ambiente: {fileID: 734273481}
   mixer: {fileID: 24100000, guid: 06288120615558f479c2e47af5113f59, type: 2}
-  musicaCollection: []
+  musicaCollection:
+  - {fileID: 8300000, guid: 8b59eb389b8248140a68bfeacbc5ce36, type: 3}
+  - {fileID: 0}
   sfxCollection: []
   sliderVolMusica: {fileID: 309513206}
   sliderVolSFX: {fileID: 1534289705}
