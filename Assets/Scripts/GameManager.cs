@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
         panelOpciones.SetActive(false);
         panelGameplay.SetActive(true);
         //musica.UnPause();
-        //AudioManager.instanceAudioManager.musica.UnPause();
+        AudioManager.instanceAudioManager.musica.UnPause();
 
     }
     public void Pausa()
@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour
         panelPausa.SetActive(true);
         panelGameplay.SetActive(false);
         panelOpciones.SetActive(false);
-        //AudioManager.instanceAudioManager.musica.Pause();
+        AudioManager.instanceAudioManager.musica.Pause();
         // musica.Pause();
         //musica.Pause();
     }
@@ -47,7 +47,7 @@ public class GameManager : MonoBehaviour
         panelPausa.SetActive(false);
         panelGameplay.SetActive(false);
         panelOpciones.SetActive(true);
-        //AudioManager.instanceAudioManager.musica.Pause();
+        AudioManager.instanceAudioManager.musica.Pause();
         // musica.Pause();
         //musica.Pause();
     }
