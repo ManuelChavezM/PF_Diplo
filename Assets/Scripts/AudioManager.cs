@@ -51,7 +51,7 @@ public class AudioManager : MonoBehaviour
 
     }
 
-    public void PlaySFx(SFXType sfxType)
+    public void PlaySFX(SFXType sfxType)
     {
         switch(sfxType)
         {
