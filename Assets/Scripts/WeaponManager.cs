@@ -32,6 +32,7 @@ public class WeaponManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
+            AudioManager.instanceAudioManager.PlaySFX(SFXType.CHANGE);
             if (Weapons[0].activeInHierarchy) // activacion cuchillo
             {
                 Weapons[0].SetActive(false);

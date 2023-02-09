@@ -26,9 +26,9 @@ public class GameManager : MonoBehaviour
         panelPausa.SetActive(false);
         panelOpciones.SetActive(false);
         panelGameplay.SetActive(true);
-        //musica.UnPause();
         AudioManager.instanceAudioManager.musica.UnPause();
-
+        AudioManager.instanceAudioManager.ambiente.Play();
+       
     }
     public void Pausa()
     {
@@ -37,26 +37,23 @@ public class GameManager : MonoBehaviour
         panelGameplay.SetActive(false);
         panelOpciones.SetActive(false);
         AudioManager.instanceAudioManager.musica.Pause();
-        // musica.Pause();
-        //musica.Pause();
+        AudioManager.instanceAudioManager.ambiente.Pause();
+       
     }
 
     public void Opciones()
     {
-        Time.timeScale = 0; //detener todos los procesos con animacion y codigo pero no de interfaz
         panelPausa.SetActive(false);
         panelGameplay.SetActive(false);
         panelOpciones.SetActive(true);
-        AudioManager.instanceAudioManager.musica.Pause();
-        // musica.Pause();
-        //musica.Pause();
+        
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && panelGameplay.activeInHierarchy)
         {
             Pausa();
         }

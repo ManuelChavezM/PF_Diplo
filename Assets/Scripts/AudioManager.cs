@@ -45,9 +45,9 @@ public class AudioManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        mixer.SetFloat("VolumenMusica",sliderVolMusica.value);
-        mixer.SetFloat("VolumenSFX", sliderVolSFX.value);
-        mixer.SetFloat("VolumenAmbiente", sliderVolAmbiente.value);
+        mixer.SetFloat("VolMusica",sliderVolMusica.value);
+        mixer.SetFloat("VolSFX", sliderVolSFX.value);
+        mixer.SetFloat("VolAmbiente", sliderVolAmbiente.value);
 
     }
 
@@ -90,5 +90,6 @@ public class AudioManager : MonoBehaviour
             musica.Play();
             ReproduccionChase = true;
         }
+      
     }
 }

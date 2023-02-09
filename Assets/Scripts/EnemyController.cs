@@ -93,7 +93,10 @@ public class EnemyController : MonoBehaviour
         {
             AudioManager.instanceAudioManager.ReproduccionPatrulla = false;
             AudioManager.instanceAudioManager.ReproduccionChase = false;
-            AudioManager.instanceAudioManager.PlayMusic(0);
+            if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[0])
+            {
+                AudioManager.instanceAudioManager.PlayMusic(0);
+            }
             VidaCero();
         }
 

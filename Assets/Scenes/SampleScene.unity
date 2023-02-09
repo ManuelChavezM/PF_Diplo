@@ -1008,7 +1008,7 @@ MonoBehaviour:
   m_MinValue: -80
   m_MaxValue: 20
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: -8
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2323,10 +2323,10 @@ AudioSource:
   m_GameObject: {fileID: 734273480}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: -7181415777364652652, guid: 06288120615558f479c2e47af5113f59,
+  OutputAudioMixerGroup: {fileID: -83660656377304841, guid: 736f32584c4dd2f4b9126e67213cbd88,
     type: 2}
-  m_audioClip: {fileID: 0}
-  m_PlayOnAwake: 0
+  m_audioClip: {fileID: 8300000, guid: b7f96129d06cd474283f6238a45a018e, type: 3}
+  m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
   Loop: 1
@@ -2555,7 +2555,7 @@ AudioSource:
   m_GameObject: {fileID: 754058353}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 3728443039123413976, guid: 06288120615558f479c2e47af5113f59,
+  OutputAudioMixerGroup: {fileID: 1987480104128915817, guid: 736f32584c4dd2f4b9126e67213cbd88,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
@@ -3137,10 +3137,11 @@ MonoBehaviour:
   musica: {fileID: 1379788190}
   SFX: {fileID: 754058354}
   ambiente: {fileID: 734273481}
-  mixer: {fileID: 24100000, guid: 06288120615558f479c2e47af5113f59, type: 2}
+  mixer: {fileID: 24100000, guid: 736f32584c4dd2f4b9126e67213cbd88, type: 2}
   musicaCollection:
   - {fileID: 8300000, guid: 8b59eb389b8248140a68bfeacbc5ce36, type: 3}
   - {fileID: 8300000, guid: be58c37be31680547b12a91cf3b5cec5, type: 3}
+  - {fileID: 8300000, guid: 51a25746195cdb94e9c6772f100b662d, type: 3}
   sfxCollection:
   - {fileID: 8300000, guid: 1f1483d66c99d25428d17540babe500e, type: 3}
   - {fileID: 8300000, guid: fae325143516d9747bd22aeb83d5fefb, type: 3}
@@ -3694,7 +3695,7 @@ AudioSource:
   m_GameObject: {fileID: 1379788189}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 6590238885758665830, guid: 06288120615558f479c2e47af5113f59,
+  OutputAudioMixerGroup: {fileID: 3865039391531479478, guid: 736f32584c4dd2f4b9126e67213cbd88,
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0

@@ -75,6 +75,7 @@ public class FPController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && GameManager.instanceGameManager.magazine != 0)
         {
+            AudioManager.instanceAudioManager.PlaySFX(SFXType.RELOAD);
             GameManager.instanceGameManager.RestaMagazine();
             Arma.Municion = 5;
         }

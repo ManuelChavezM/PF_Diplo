@@ -23,6 +23,8 @@ public class Shooter : MonoBehaviour
         {
             if (Municion != 0)
             {
+                AudioManager.instanceAudioManager.PlaySFX(SFXType.SHOOT);
+
                 tmpBullet = Instantiate(bullet, originBullet.position, Quaternion.identity);
 
                 //orientacion de la bala por medio del uso del transform originbullet
