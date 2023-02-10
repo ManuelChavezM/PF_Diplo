@@ -26,6 +26,10 @@ public class EnemyController : MonoBehaviour
     private float valueLifeEnemy;
 
     private int D = 0;
+    private float tiempoCorriendo = 0f;
+    private float tiempoLimite = 1f;
+    private int tiempoMax = 0;
+    private Vector3 posicionActual;
 
 
     // Start is called before the first frame update
@@ -55,6 +59,7 @@ public class EnemyController : MonoBehaviour
         {
             case EnemyState.CHASE:
                 //perseguir al jugador asignandole la posicion del jugador a partir de su transform
+                // SetDestiantion aplica funciona en el Swicht
                 enemyAgent.SetDestination(playerTransform.position);  //Validar si alcanza al jugador
                 AudioManager.instanceAudioManager.PlayMusic(1);
                 if (enemyAgent.velocity.sqrMagnitude == 0)
@@ -75,13 +80,27 @@ public class EnemyController : MonoBehaviour
                 enemyAgent.SetDestination(playerTransform.position);
                 VerificarAnimacion();
                 break;
+
+            case EnemyState.DIE:
+                enemyAnimator.SetTrigger("Die");
+                enemyAgent.SetDestination(GetComponent<Transform>().position);
+                if ( tiempoMax == 2)
+                {
+                    VidaCero();
+                }
+                else
+                {
+                    HacerTiempo();
+                }
+
+                break;
         }
     
 
-        enemyAnimator.SetFloat("speed", enemyAgent.velocity.sqrMagnitude);
-
+         enemyAnimator.SetFloat("speed", enemyAgent.velocity.sqrMagnitude);
+   
         
-        if (Vida < vidaMax && Vida != 0)
+        if (Vida < vidaMax)
         {
             valueLifeEnemy = Vida / vidaMax;
             imgVida.fillAmount = valueLifeEnemy;
@@ -89,7 +108,7 @@ public class EnemyController : MonoBehaviour
         }
 
 
-        if (Vida == 0)
+        if (Vida <= 0)
         {
             AudioManager.instanceAudioManager.ReproduccionPatrulla = false;
             AudioManager.instanceAudioManager.ReproduccionChase = false;
@@ -97,7 +116,8 @@ public class EnemyController : MonoBehaviour
             {
                 AudioManager.instanceAudioManager.PlayMusic(0);
             }
-            VidaCero();
+            currentState = EnemyState.DIE;
+            CancelInvoke("GenerateRandomDestination");
         }
 
         Lifebar();
@@ -149,6 +169,7 @@ public class EnemyController : MonoBehaviour
             {
                 tiempoDamage = 0f;
                 D++;
+                AudioManager.instanceAudioManager.PlaySFX(SFXType.DAMAGE);
                 vidaJugador.vida = vidaJugador.vida - 1;
                 Debug.Log("Haciendo daño: " + D);
             }
@@ -159,6 +180,7 @@ public class EnemyController : MonoBehaviour
 
     public void ReduccionVida()
     {
+        AudioManager.instanceAudioManager.PlaySFX(SFXType.ENEMY);
         Vida = Vida - 5f;
 
     }
@@ -190,6 +212,16 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    public void HacerTiempo()
+    {
+        tiempoCorriendo += Time.deltaTime;
+        if(tiempoCorriendo >= tiempoLimite)
+        {
+            tiempoCorriendo = 0f;
+            tiempoMax++;
+        }
+    }
+
 
 }
 
@@ -198,5 +230,6 @@ public enum EnemyState
 {
     PATROL,
     CHASE,
-    ATTACK
+    ATTACK,
+    DIE
 };

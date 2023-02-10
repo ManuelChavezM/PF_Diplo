@@ -756,10 +756,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef4b930b5f91c348910c58d2b902ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1000
+  speed: 500
   speedRotation: 170
   cameraTransform: {fileID: 0}
-  jumpForce: 5
   Arma: {fileID: 2081856345}
   vida: 10
   vidaMAX: 0
@@ -3143,12 +3142,15 @@ MonoBehaviour:
   - {fileID: 8300000, guid: be58c37be31680547b12a91cf3b5cec5, type: 3}
   - {fileID: 8300000, guid: 51a25746195cdb94e9c6772f100b662d, type: 3}
   sfxCollection:
-  - {fileID: 8300000, guid: 1f1483d66c99d25428d17540babe500e, type: 3}
+  - {fileID: 8300000, guid: 4a4e3261269968c479872570320a4430, type: 3}
   - {fileID: 8300000, guid: fae325143516d9747bd22aeb83d5fefb, type: 3}
   - {fileID: 8300000, guid: 07428e7001c8e944c878a5ef36de8256, type: 3}
   - {fileID: 8300000, guid: e3ebd24de4c3b3648be280f4c9876111, type: 3}
   - {fileID: 8300000, guid: 7866689f28f080b40950e6e8dc863e0e, type: 3}
   - {fileID: 8300000, guid: e8a9d229c0aa4824f979b4998a3f47b7, type: 3}
+  - {fileID: 8300000, guid: 971a1dbce6b596c46ae2e1f070d3376e, type: 3}
+  - {fileID: 8300000, guid: 20ab79dd0ea662c4a997e69ec90f285c, type: 3}
+  - {fileID: 8300000, guid: 60535cb19f5d0bd4cba2c2ff01990830, type: 3}
   sliderVolMusica: {fileID: 309513206}
   sliderVolSFX: {fileID: 1534289705}
   sliderVolAmbiente: {fileID: 298493333}
@@ -4630,7 +4632,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0.8, y: 1}
+  m_AnchorMax: {x: 0.72, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -5831,8 +5833,8 @@ RectTransform:
   m_Father: {fileID: 1126523407}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.8, y: 0}
-  m_AnchorMax: {x: 0.8, y: 1}
+  m_AnchorMin: {x: 0.72, y: 0}
+  m_AnchorMax: {x: 0.72, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -6112,15 +6114,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2102196341}
-  m_LocalRotation: {x: 0.5915912, y: 0, z: 0, w: 0.8062382}
-  m_LocalPosition: {x: 223.1, y: 94, z: 5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 217.4, y: 8.2, z: 44.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 969159819}
   m_Father: {fileID: 0}
   m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 72.54, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2131955602
 GameObject:
   m_ObjectHideFlags: 0

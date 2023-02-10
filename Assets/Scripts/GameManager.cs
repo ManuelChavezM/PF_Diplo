@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     public void Continuar()
     {
         Time.timeScale = 1;
+        AudioManager.instanceAudioManager.PlaySFX(SFXType.BUTTON);
         panelPausa.SetActive(false);
         panelOpciones.SetActive(false);
         panelGameplay.SetActive(true);
@@ -33,6 +34,7 @@ public class GameManager : MonoBehaviour
     public void Pausa()
     {
         Time.timeScale = 0; //detener todos los procesos con animacion y codigo pero no de interfaz
+        AudioManager.instanceAudioManager.PlaySFX(SFXType.BUTTON);
         panelPausa.SetActive(true);
         panelGameplay.SetActive(false);
         panelOpciones.SetActive(false);
@@ -43,6 +45,7 @@ public class GameManager : MonoBehaviour
 
     public void Opciones()
     {
+        AudioManager.instanceAudioManager.PlaySFX(SFXType.BUTTON);
         panelPausa.SetActive(false);
         panelGameplay.SetActive(false);
         panelOpciones.SetActive(true);
@@ -90,6 +93,7 @@ public class GameManager : MonoBehaviour
 
     public void Salir()
     {
+        AudioManager.instanceAudioManager.PlaySFX(SFXType.BUTTON);
         Debug.Log("SALISTE DEL JUEGO");
         Application.Quit();
     }

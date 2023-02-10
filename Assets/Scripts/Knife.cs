@@ -34,12 +34,14 @@ public class Knife : MonoBehaviour
             Debug.DrawRay(mouseRay.origin, mouseRay.direction, Color.blue, 10f);
             knifeAnimator.SetTrigger("ataque");
             knifeAnimator.SetBool("active", true);
+            AudioManager.instanceAudioManager.PlaySFX(SFXType.KNIFE);
 
             //Devuelve un bool
             if (Physics.Raycast(mouseRay, out mouseHit, 1.2f, mouseMask))
             {
                 enemigo = mouseHit.collider.gameObject;
                 enemigo.GetComponent<EnemyController>().ReduccionVida();
+                AudioManager.instanceAudioManager.PlaySFX(SFXType.HIT);
                 Debug.DrawRay(mouseRay.origin, mouseRay.direction, Color.red, 10f);
 
 

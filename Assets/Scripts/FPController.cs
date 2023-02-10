@@ -14,7 +14,7 @@ public class FPController : MonoBehaviour
     private float yVel;
     private bool locked;
 
-    public float jumpForce = 5f;
+  
 
     public Shooter Arma;
 
@@ -57,10 +57,10 @@ public class FPController : MonoBehaviour
         movement.y = yVel;
         fprb.velocity = movement;
 
-       /* if (Input.GetKeyDown(KeyCode.Space))
+        if(Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal") != 0f && GameManager.instanceGameManager.panelGameplay.activeInHierarchy)
         {
-            fprb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
-        }*/
+            AudioManager.instanceAudioManager.PlaySFX(SFXType.WALK);
+        }
 
         if( vida <= 0)
         {

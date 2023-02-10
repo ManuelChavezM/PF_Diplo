@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
         {
             enemigo = collision.gameObject;
             enemigo.GetComponent<EnemyController>().ReduccionVida();
+            AudioManager.instanceAudioManager.PlaySFX(SFXType.HIT);
         }
 
         //de esta forma nos aseguramos que se destruya el objeto

@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 5
+    m_Start: 2.0333333333333345
     m_ClipIn: 0
     m_Asset: {fileID: 165763797893950356}
     m_Duration: 4
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c38f6fa1940124db1ab7f6fe7268d1, type: 3}
   m_Name: Signal Emitter
   m_EditorClassIdentifier: 
-  m_Time: 5
+  m_Time: 2.0333333333333345
   m_Retroactive: 0
   m_EmitOnce: 0
   m_Asset: {fileID: 11400000, guid: 1f498a79d2bbbdf43b1b21d4ac326bbf, type: 2}
@@ -167,7 +167,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 5
+    m_Start: 2.0333333333333345
     m_ClipIn: 0
     m_Asset: {fileID: -5706095966236357163}
     m_Duration: 4.0166666666666675
@@ -263,13 +263,13 @@ MonoBehaviour:
     m_Start: 0
     m_ClipIn: 0
     m_Asset: {fileID: 8911431273452149806}
-    m_Duration: 5
+    m_Duration: 2.0333333333333345
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1034171210501763150}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 1
+    m_BlendOutDuration: 1.6166666666666678
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -329,15 +329,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: Intro
   - m_Version: 1
-    m_Start: 4
+    m_Start: 0.4166666666666667
     m_ClipIn: 0
     m_Asset: {fileID: 3962858841614329366}
-    m_Duration: 5
+    m_Duration: 5.6166666666666645
     m_TimeScale: 1
     m_ParentTrack: {fileID: -1034171210501763150}
     m_EaseInDuration: 0
     m_EaseOutDuration: 0
-    m_BlendInDuration: 1
+    m_BlendInDuration: 1.6166666666666678
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -430,7 +430,7 @@ MonoBehaviour:
   - {fileID: 3519998375034234477}
   - {fileID: -6577574109706095211}
   - {fileID: -1347797777287136166}
-  m_FixedDuration: 5.016666666666667
+  m_FixedDuration: 2.033333333333333
   m_EditorSettings:
     m_Framerate: 60
     m_ScenePreview: 1
@@ -470,7 +470,7 @@ MonoBehaviour:
   m_Children: []
   m_Clips:
   - m_Version: 1
-    m_Start: 5
+    m_Start: 2.0333333333333345
     m_ClipIn: 0
     m_Asset: {fileID: -755945941915362515}
     m_Duration: 4

@@ -11,7 +11,10 @@ public enum SFXType
     RELOAD,
     KNIFE,
     SHOOT,
-    DAMAGE
+    DAMAGE,
+    BUTTON,
+    HIT,
+    ENEMY
 
 };
 
@@ -56,7 +59,10 @@ public class AudioManager : MonoBehaviour
         switch(sfxType)
         {
             case SFXType.WALK:
-                SFX.PlayOneShot(sfxCollection[0]);
+                if (!SFX.isPlaying)
+                {
+                    SFX.PlayOneShot(sfxCollection[0]);
+                }
                 break;
             case SFXType.CHANGE:
                 SFX.PlayOneShot(sfxCollection[1]);
@@ -72,6 +78,15 @@ public class AudioManager : MonoBehaviour
                 break;
             case SFXType.DAMAGE:
                 SFX.PlayOneShot(sfxCollection[5]);
+                break;
+            case SFXType.BUTTON:
+                SFX.PlayOneShot(sfxCollection[6]);
+                break;
+            case SFXType.HIT:
+                SFX.PlayOneShot(sfxCollection[7]);
+                break;
+            case SFXType.ENEMY:
+                SFX.PlayOneShot(sfxCollection[8]);
                 break;
 
         }
