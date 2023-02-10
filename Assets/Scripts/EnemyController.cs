@@ -84,7 +84,7 @@ public class EnemyController : MonoBehaviour
             case EnemyState.DIE:
                 enemyAnimator.SetTrigger("Die");
                 enemyAgent.SetDestination(GetComponent<Transform>().position);
-                if ( tiempoMax == 2)
+                if ( tiempoMax == 3)
                 {
                     VidaCero();
                 }
