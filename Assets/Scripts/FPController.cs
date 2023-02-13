@@ -84,7 +84,7 @@ public class FPController : MonoBehaviour
 
     public void VidaCero()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     private void OnCollisionEnter(Collision collision)
