@@ -7,7 +7,11 @@ public class Shooter : MonoBehaviour
     public float bulletForce;
     private GameObject tmpBullet;
 
+ 
+
     public int Municion;
+    public GameObject chispa;
+   
 
     private void Start()
     {
@@ -23,9 +27,14 @@ public class Shooter : MonoBehaviour
         {
             if (Municion != 0)
             {
+               
+
                 AudioManager.instanceAudioManager.PlaySFX(SFXType.SHOOT);
 
+                Instantiate(chispa, originBullet.position, Quaternion.identity);
+
                 tmpBullet = Instantiate(bullet, originBullet.position, Quaternion.identity);
+                
 
                 //orientacion de la bala por medio del uso del transform originbullet
                 tmpBullet.transform.right = originBullet.transform.forward;
@@ -39,6 +48,7 @@ public class Shooter : MonoBehaviour
 
         }
 
+        
         GameManager.instanceGameManager.TextoBalas(Municion);
     }
 }

@@ -29,7 +29,10 @@ public class EnemyController : MonoBehaviour
     private float tiempoCorriendo = 0f;
     private float tiempoLimite = 1f;
     private int tiempoMax = 0;
-    private Vector3 posicionActual;
+
+    public GameObject Cargador;
+    public GameObject Cura;
+    private int result;
 
 
     // Start is called before the first frame update
@@ -40,6 +43,7 @@ public class EnemyController : MonoBehaviour
         //Se extrae los componentes
         enemyAgent = GetComponent<NavMeshAgent>();
         enemyAnimator = GetComponent<Animator>();
+        
 
         //conectarse con el script del jugador 
         Jugador = GameObject.FindGameObjectWithTag("Player");
@@ -86,7 +90,9 @@ public class EnemyController : MonoBehaviour
                 enemyAgent.SetDestination(GetComponent<Transform>().position);
                 if ( tiempoMax == 3)
                 {
+                    
                     VidaCero();
+
                 }
                 else
                 {
@@ -187,7 +193,7 @@ public class EnemyController : MonoBehaviour
 
     public void VidaCero()
     {
-       /* PlayerProfile.instance.EnemigoMuerto();*/
+        Drop();
         Destroy(this.gameObject);
     }
 
@@ -219,6 +225,20 @@ public class EnemyController : MonoBehaviour
         {
             tiempoCorriendo = 0f;
             tiempoMax++;
+        }
+    }
+
+    public void Drop()
+    {
+        result = Random.Range(1,2);
+        Debug.Log(result);
+        if(result == 1)
+        {
+            Instantiate(Cargador, GetComponent<Transform>().position, Quaternion.identity);
+        }
+        if (result == 2)
+        {
+            Instantiate(Cura, GetComponent<Transform>().position, Quaternion.identity);
         }
     }
 

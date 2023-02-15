@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     public TMP_Text txtCargador;
     public Image imgVida;
     public int magazine; // nuemero de cargadores recogido
+    public int Cura;
+    public TMP_Text txtCura;
     //public AudioSource musica;
 
     void Awake()
@@ -61,6 +63,7 @@ public class GameManager : MonoBehaviour
             Pausa();
         }
         TextoCargador(magazine);
+        TextoCura(Cura);
     }
 
     public void ImagenVida(float fill)
@@ -81,6 +84,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void SumaCura()
+    {
+        Cura++;
+    }
+    public void RestaCura()
+    {
+        if (magazine != 0)
+        {
+            Cura--;
+        }
+    }
+
+
     public void TextoCargador(int cargador)
     {
         txtCargador.text = "" + cargador;
@@ -89,6 +105,11 @@ public class GameManager : MonoBehaviour
     public void TextoBalas(int balas)
     {
         txtBalas.text = "" + balas;
+    }
+
+    public void TextoCura(int cura)
+    {
+        txtCura.text = "" + cura;
     }
 
     public void Salir()

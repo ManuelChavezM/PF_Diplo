@@ -12,7 +12,8 @@ public class Knife : MonoBehaviour
     private GameObject cuchillo;
     public Animator knifeAnimator;
     public GameObject OrigenRay;
-    
+
+    public GameObject Blood;
 
 
    // private GameObject weaponManager;
@@ -42,6 +43,7 @@ public class Knife : MonoBehaviour
                 enemigo = mouseHit.collider.gameObject;
                 enemigo.GetComponent<EnemyController>().ReduccionVida();
                 AudioManager.instanceAudioManager.PlaySFX(SFXType.HIT);
+                Instantiate(Blood, mouseHit.point, Quaternion.identity);
                 Debug.DrawRay(mouseRay.origin, mouseRay.direction, Color.red, 10f);
 
 

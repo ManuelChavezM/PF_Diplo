@@ -14,8 +14,6 @@ public class FPController : MonoBehaviour
     private float yVel;
     private bool locked;
 
-  
-
     public Shooter Arma;
 
     //varibles de para el manejo de la vida y calculo del life bar
@@ -23,6 +21,7 @@ public class FPController : MonoBehaviour
     public float vidaMAX;
     public float LifeValue;
 
+    public GameObject rifle;
 
     private void Start()
     {
@@ -67,17 +66,23 @@ public class FPController : MonoBehaviour
             VidaCero();
         }
 
-        if(vida != vidaMAX)
-        {
-            LifeValue = vida / vidaMAX;
-            GameManager.instanceGameManager.ImagenVida(LifeValue);
-        }
+        ActualizarLifeBar();
+      
 
-        if (Input.GetKeyDown(KeyCode.R) && GameManager.instanceGameManager.magazine != 0)
+        if (Input.GetKeyDown(KeyCode.E) && GameManager.instanceGameManager.magazine != 0 && rifle.activeInHierarchy)
         {
             AudioManager.instanceAudioManager.PlaySFX(SFXType.RELOAD);
             GameManager.instanceGameManager.RestaMagazine();
             Arma.Municion = 5;
+        }
+
+        if (Input.GetKeyDown(KeyCode.R) && GameManager.instanceGameManager.Cura != 0 )
+        {
+            vida = vidaMAX;
+            LifeValue = vida / vidaMAX;
+            GameManager.instanceGameManager.ImagenVida(LifeValue);
+            GameManager.instanceGameManager.RestaCura();
+            
         }
 
     }
@@ -87,12 +92,28 @@ public class FPController : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    public void ActualizarLifeBar()
+    {
+        if (vida != vidaMAX)
+        {
+            LifeValue = vida / vidaMAX;
+            GameManager.instanceGameManager.ImagenVida(LifeValue);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Cargador")
         {
             
             GameManager.instanceGameManager.SumaMagazine();
+            Destroy(collision.gameObject);
+
+        }
+
+        if (collision.gameObject.tag == "Cura")
+        {
+            GameManager.instanceGameManager.SumaCura();
             Destroy(collision.gameObject);
 
         }

@@ -2901,6 +2901,9 @@ MonoBehaviour:
   Vida: 10
   vidaMax: 0
   imgVida: {fileID: 1216834483208714781}
+  Cargador: {fileID: 1034915773903631514, guid: b836f6f0361b1374b9f88d23dcfe3b11,
+    type: 3}
+  Cura: {fileID: 4230152815576633603, guid: 6780124b8293ad64f96e5adb147510ca, type: 3}
 --- !u!1 &2096040370916329103
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ TagManager:
   - Cargador
   - Enemy
   - knife
+  - Cura
   layers:
   - Default
   - TransparentFX
