@@ -90,7 +90,7 @@ public class GameManager : MonoBehaviour
     }
     public void RestaCura()
     {
-        if (magazine != 0)
+        if (Cura != 0)
         {
             Cura--;
         }

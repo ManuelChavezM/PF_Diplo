@@ -32,7 +32,7 @@ public class EnemyController : MonoBehaviour
 
     public GameObject Cargador;
     public GameObject Cura;
-    private int result;
+    private float result;
 
 
     // Start is called before the first frame update
@@ -116,12 +116,7 @@ public class EnemyController : MonoBehaviour
 
         if (Vida <= 0)
         {
-            AudioManager.instanceAudioManager.ReproduccionPatrulla = false;
-            AudioManager.instanceAudioManager.ReproduccionChase = false;
-            if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[0])
-            {
-                AudioManager.instanceAudioManager.PlayMusic(0);
-            }
+           
             currentState = EnemyState.DIE;
             CancelInvoke("GenerateRandomDestination");
         }
@@ -139,7 +134,10 @@ public class EnemyController : MonoBehaviour
                 InvokeRepeating("GenerateRandomDestination", 0f, patrolTime);
                 if (AudioManager.instanceAudioManager.ReproduccionChase == false)
                 {
-                    AudioManager.instanceAudioManager.PlayMusic(0);
+                    if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[0])
+                    {
+                        AudioManager.instanceAudioManager.PlayMusic(0);
+                    }
                 }
                 break;
         }
@@ -161,6 +159,7 @@ public class EnemyController : MonoBehaviour
             {
                 currentState = EnemyState.CHASE;
                 CancelInvoke("GenerateRandomDestination");
+                
             }
         }
     }
@@ -186,6 +185,11 @@ public class EnemyController : MonoBehaviour
 
     public void ReduccionVida()
     {
+        if (currentState == EnemyState.PATROL)
+        {
+            currentState = EnemyState.CHASE;
+            CancelInvoke("GenerateRandomDestination");
+        }
         AudioManager.instanceAudioManager.PlaySFX(SFXType.ENEMY);
         Vida = Vida - 5f;
 
@@ -194,6 +198,12 @@ public class EnemyController : MonoBehaviour
     public void VidaCero()
     {
         Drop();
+        AudioManager.instanceAudioManager.ReproduccionPatrulla = false;
+        AudioManager.instanceAudioManager.ReproduccionChase = false;
+        if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[0])
+        {
+            AudioManager.instanceAudioManager.PlayMusic(0);
+        }
         Destroy(this.gameObject);
     }
 
@@ -230,13 +240,13 @@ public class EnemyController : MonoBehaviour
 
     public void Drop()
     {
-        result = Random.Range(1,2);
+        result = Random.Range(1f,2f);
         Debug.Log(result);
-        if(result == 1)
+        if(result  <= 1.7f)
         {
             Instantiate(Cargador, GetComponent<Transform>().position, Quaternion.identity);
         }
-        if (result == 2)
+        if (result > 1.7f)
         {
             Instantiate(Cura, GetComponent<Transform>().position, Quaternion.identity);
         }

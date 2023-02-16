@@ -76,12 +76,13 @@ public class FPController : MonoBehaviour
             Arma.Municion = 5;
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && GameManager.instanceGameManager.Cura != 0 )
+        if (Input.GetKeyDown(KeyCode.R) && GameManager.instanceGameManager.Cura != 0 && vida!=vidaMAX)
         {
+            GameManager.instanceGameManager.RestaCura();
             vida = vidaMAX;
             LifeValue = vida / vidaMAX;
             GameManager.instanceGameManager.ImagenVida(LifeValue);
-            GameManager.instanceGameManager.RestaCura();
+           
             
         }
 
