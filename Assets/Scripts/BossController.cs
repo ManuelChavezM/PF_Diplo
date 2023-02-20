@@ -162,7 +162,7 @@ public class BossController : MonoBehaviour
         {
             AudioManager.instanceAudioManager.PlayMusic(0);
         }
-        Destroy(this.gameObject);
+        //Destroy(this.gameObject);
     }
 
     public void Lifebar()

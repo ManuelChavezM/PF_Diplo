@@ -4615,7 +4615,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: ecde066f2e616cc4faef78021dcd3183,
         type: 3}
       propertyPath: m_TagString
-      value: Enemy
+      value: Boss
       objectReference: {fileID: 0}
     - target: {fileID: 986451806660615024, guid: ecde066f2e616cc4faef78021dcd3183,
         type: 3}
@@ -4777,6 +4777,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!136 &1349643269
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 454719375}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.2889128
+  m_Height: 11.984557
+  m_Direction: 2
+  m_Center: {x: 0.18427275, y: 7.8190746, z: -0.05774021}
 --- !u!1 &1377364939
 GameObject:
   m_ObjectHideFlags: 0
