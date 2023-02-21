@@ -27,9 +27,7 @@ public class BossController : MonoBehaviour
     private float tiempoLimite = 1f;
     private int tiempoMax = 0;
 
-    public GameObject Cargador;
-    public GameObject Cura;
-    private float result;
+   
 
 
     // Start is called before the first frame update
@@ -155,7 +153,7 @@ public class BossController : MonoBehaviour
 
     public void VidaCero()
     {
-        Drop();
+       
         AudioManager.instanceAudioManager.ReproduccionPatrulla = false;
         AudioManager.instanceAudioManager.ReproduccionChase = false;
         if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[0])
@@ -193,20 +191,6 @@ public class BossController : MonoBehaviour
         {
             tiempoCorriendo = 0f;
             tiempoMax++;
-        }
-    }
-
-    public void Drop()
-    {
-        result = Random.Range(1f, 2f);
-        Debug.Log(result);
-        if (result <= 1.7f)
-        {
-            Instantiate(Cargador, GetComponent<Transform>().position, Quaternion.identity);
-        }
-        if (result > 1.7f)
-        {
-            Instantiate(Cura, GetComponent<Transform>().position, Quaternion.identity);
         }
     }
 
