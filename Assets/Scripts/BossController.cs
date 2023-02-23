@@ -27,7 +27,8 @@ public class BossController : MonoBehaviour
     private float tiempoLimite = 1f;
     private int tiempoMax = 0;
 
-   
+    public GameObject muro1;
+    public GameObject muro2;
 
 
     // Start is called before the first frame update
@@ -85,7 +86,8 @@ public class BossController : MonoBehaviour
                 enemyAgent.SetDestination(GetComponent<Transform>().position);
                 if (tiempoMax == 3)
                 {
-
+                    muro1.SetActive(false);
+                    muro2.SetActive(false);
                     VidaCero();
 
                 }

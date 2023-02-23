@@ -53,7 +53,12 @@ public class FPController : MonoBehaviour
         movement = Camera.main.transform.forward * speed * Time.deltaTime * Input.GetAxis("Vertical");
         movement += Camera.main.transform.right * speed * Time.deltaTime * Input.GetAxis("Horizontal");
 
-        movement.y = yVel;
+        if (yVel <= 1.0f)
+        {
+            movement.y = yVel;
+        }
+        
+       
         fprb.velocity = movement;
 
         if(Input.GetAxis("Vertical") != 0f || Input.GetAxis("Horizontal") != 0f && GameManager.instanceGameManager.panelGameplay.activeInHierarchy)
