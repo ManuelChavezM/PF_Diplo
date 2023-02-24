@@ -57,6 +57,10 @@ public class FPController : MonoBehaviour
         {
             movement.y = yVel;
         }
+        else
+        {
+            movement.y = 1.0f;
+        }
         
        
         fprb.velocity = movement;

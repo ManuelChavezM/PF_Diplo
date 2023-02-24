@@ -14,7 +14,12 @@ public enum SFXType
     DAMAGE,
     BUTTON,
     HIT,
-    ENEMY
+    ENEMY,
+    BOSSDAMAGE,
+    BOSSWALK,
+    BOSSDIE,
+    RUGIDO,
+    ALERT
 
 };
 
@@ -88,6 +93,21 @@ public class AudioManager : MonoBehaviour
             case SFXType.ENEMY:
                 SFX.PlayOneShot(sfxCollection[8]);
                 break;
+            case SFXType.BOSSDAMAGE:
+                SFX.PlayOneShot(sfxCollection[9]);
+                break;
+            case SFXType.BOSSWALK:
+                SFX.PlayOneShot(sfxCollection[10]);
+                break;
+            case SFXType.BOSSDIE:
+                SFX.PlayOneShot(sfxCollection[11]);
+                break;
+            case SFXType.RUGIDO:
+                SFX.PlayOneShot(sfxCollection[12]);
+                break;
+            case SFXType.ALERT:
+                SFX.PlayOneShot(sfxCollection[13]);
+                break;
 
         }
     }
@@ -105,6 +125,11 @@ public class AudioManager : MonoBehaviour
             musica.Play();
             ReproduccionChase = true;
         }
-      
+        if (musicClip == 2)
+        {
+            musica.Play();
+            
+        }
+
     }
 }

@@ -768,7 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef4b930b5f91c348910c58d2b902ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 300
+  speed: 325
   speedRotation: 170
   cameraTransform: {fileID: 0}
   Arma: {fileID: 2081856345}
@@ -3942,7 +3942,7 @@ MonoBehaviour:
   musicaCollection:
   - {fileID: 8300000, guid: 8b59eb389b8248140a68bfeacbc5ce36, type: 3}
   - {fileID: 8300000, guid: be58c37be31680547b12a91cf3b5cec5, type: 3}
-  - {fileID: 8300000, guid: 51a25746195cdb94e9c6772f100b662d, type: 3}
+  - {fileID: 8300000, guid: 6ec5e1d03f106ff4b9f4e70cebe7542f, type: 3}
   sfxCollection:
   - {fileID: 8300000, guid: 4a4e3261269968c479872570320a4430, type: 3}
   - {fileID: 8300000, guid: fae325143516d9747bd22aeb83d5fefb, type: 3}
@@ -3953,6 +3953,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 971a1dbce6b596c46ae2e1f070d3376e, type: 3}
   - {fileID: 8300000, guid: 20ab79dd0ea662c4a997e69ec90f285c, type: 3}
   - {fileID: 8300000, guid: 60535cb19f5d0bd4cba2c2ff01990830, type: 3}
+  - {fileID: 8300000, guid: e5607aefbdc838843b61c4aa686ecd2b, type: 3}
+  - {fileID: 8300000, guid: 3725f0b2904a23048ace683a837042b8, type: 3}
+  - {fileID: 8300000, guid: 52c81f0cc0145e446adfe355d4ddceb3, type: 3}
+  - {fileID: 8300000, guid: ee8e97733e4acc147a13cc697df602e4, type: 3}
+  - {fileID: 8300000, guid: d8bd806949e09b94fa2d2beac18bc981, type: 3}
   sliderVolMusica: {fileID: 309513206}
   sliderVolSFX: {fileID: 1534289705}
   sliderVolAmbiente: {fileID: 298493333}

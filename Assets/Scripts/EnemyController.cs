@@ -65,7 +65,13 @@ public class EnemyController : MonoBehaviour
                 //perseguir al jugador asignandole la posicion del jugador a partir de su transform
                 // SetDestiantion aplica funciona en el Swicht
                 enemyAgent.SetDestination(playerTransform.position);  //Validar si alcanza al jugador
-                AudioManager.instanceAudioManager.PlayMusic(1);
+                /*if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[1])
+                {
+                    AudioManager.instanceAudioManager.PlayMusic(1);
+                }*/
+                   
+                
+                    
                 if (enemyAgent.velocity.sqrMagnitude == 0)
                 {
                     currentState = EnemyState.ATTACK;
@@ -137,6 +143,7 @@ public class EnemyController : MonoBehaviour
                     if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[0])
                     {
                         AudioManager.instanceAudioManager.PlayMusic(0);
+
                     }
                 }
                 break;
@@ -159,7 +166,8 @@ public class EnemyController : MonoBehaviour
             {
                 currentState = EnemyState.CHASE;
                 CancelInvoke("GenerateRandomDestination");
-                
+                AudioManager.instanceAudioManager.PlaySFX(SFXType.ALERT);
+
             }
         }
     }
@@ -203,6 +211,7 @@ public class EnemyController : MonoBehaviour
         if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[0])
         {
             AudioManager.instanceAudioManager.PlayMusic(0);
+
         }
         Destroy(this.gameObject);
     }

@@ -9,7 +9,7 @@ public class BossController : MonoBehaviour
     public NavMeshAgent enemyAgent;
     public Animator enemyAnimator;
     private Transform playerTransform;
-    private EnemyState currentState;
+    private BossState currentState;
 
     private float tiempoDamage = 0f;
     private float tiempoDamageContado = 1f;
@@ -30,6 +30,7 @@ public class BossController : MonoBehaviour
     public GameObject muro1;
     public GameObject muro2;
 
+    public bool muerto= false;
 
     // Start is called before the first frame update
     void Start()
@@ -48,8 +49,12 @@ public class BossController : MonoBehaviour
         //se obtiene que obtner el tranform del jugador por medio de su tag
         playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
 
-        currentState = EnemyState.CHASE;
+        currentState = BossState.CHASE;
+
+        
+        AudioManager.instanceAudioManager.PlaySFX(SFXType.RUGIDO);
        
+
     }
 
     // Update is called once per frame
@@ -57,23 +62,23 @@ public class BossController : MonoBehaviour
     {
         switch (currentState)
         {
-            case EnemyState.CHASE:
+            case BossState.CHASE:
                 //perseguir al jugador asignandole la posicion del jugador a partir de su transform
                 // SetDestiantion aplica funciona en el Swicht
                 enemyAgent.SetDestination(playerTransform.position);  //Validar si alcanza al jugador
-               // AudioManager.instanceAudioManager.PlayMusic(1);
+                AudioManager.instanceAudioManager.PlayMusic(1);
                 if (enemyAgent.velocity.sqrMagnitude == 0)
                 {
-                    currentState = EnemyState.ATTACK;
+                    currentState = BossState.ATTACK;
                     enemyAnimator.SetBool("attack", true);
                     VerificarAnimacion();
                 }
                 break;
 
-            case EnemyState.ATTACK:
+            case BossState.ATTACK:
                 if (enemyAgent.velocity.sqrMagnitude != 0)
                 {
-                    currentState = EnemyState.CHASE;
+                    currentState = BossState.CHASE;
                     enemyAnimator.SetBool("attack", false);
                 }
                 //perseguir al jugador asignandole la posicion del jugador a partir de su transform
@@ -81,21 +86,25 @@ public class BossController : MonoBehaviour
                 VerificarAnimacion();
                 break;
 
-            case EnemyState.DIE:
+            case BossState.DIE:
                 enemyAnimator.SetTrigger("Die");
                 enemyAgent.SetDestination(GetComponent<Transform>().position);
                 if (tiempoMax == 3)
                 {
                     muro1.SetActive(false);
                     muro2.SetActive(false);
-                    VidaCero();
 
+                    VidaCero();
                 }
                 else
                 {
                     HacerTiempo();
                 }
 
+                break;
+
+            case BossState.GHOST:
+                muerto = true;
                 break;
         }
 
@@ -111,10 +120,10 @@ public class BossController : MonoBehaviour
         }
 
 
-        if (Vida <= 0)
+        if (Vida <= 0 && muerto == false)
         {
 
-            currentState = EnemyState.DIE;
+            currentState = BossState.DIE;
             CancelInvoke("GenerateRandomDestination");
         }
 
@@ -137,7 +146,7 @@ public class BossController : MonoBehaviour
                 tiempoDamage = 0f;
                 D++;
                 AudioManager.instanceAudioManager.PlaySFX(SFXType.DAMAGE);
-                vidaJugador.vida = vidaJugador.vida - 1;
+                vidaJugador.vida = vidaJugador.vida - 2;
                 Debug.Log("Haciendo daño: " + D);
             }
 
@@ -148,21 +157,22 @@ public class BossController : MonoBehaviour
     public void ReduccionVida()
     {
       
-        AudioManager.instanceAudioManager.PlaySFX(SFXType.ENEMY);
-        Vida = Vida - 5f;
+        AudioManager.instanceAudioManager.PlaySFX(SFXType.BOSSDAMAGE);
+        Vida = Vida - 1f;
 
     }
 
     public void VidaCero()
     {
-       
         AudioManager.instanceAudioManager.ReproduccionPatrulla = false;
         AudioManager.instanceAudioManager.ReproduccionChase = false;
         if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[0])
         {
             AudioManager.instanceAudioManager.PlayMusic(0);
+
         }
-        //Destroy(this.gameObject);
+        currentState = BossState.GHOST;
+
     }
 
     public void Lifebar()
@@ -204,5 +214,6 @@ public enum BossState
 {
     CHASE,
     ATTACK,
-    DIE
+    DIE,
+    GHOST
 };
