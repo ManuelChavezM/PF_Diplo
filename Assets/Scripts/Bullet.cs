@@ -18,7 +18,7 @@ public class Bullet : MonoBehaviour
             //collision.contacts[0].point detecta el primer punto de contact
             Instantiate(explotion, collision.contacts[0].point + collision.contacts[0].normal * 0.001f, Quaternion.LookRotation(collision.contacts[0].normal * -1), collision.transform);
             enemigo = collision.gameObject;
-            enemigo.GetComponent<EnemyController>().ReduccionVida();
+            enemigo.GetComponent<EnemyController>().ReduccionVida(5.0f);
             AudioManager.instanceAudioManager.PlaySFX(SFXType.HIT);
         }
 

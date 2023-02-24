@@ -768,7 +768,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eef4b930b5f91c348910c58d2b902ec5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 325
+  speed: 370
   speedRotation: 170
   cameraTransform: {fileID: 0}
   Arma: {fileID: 2081856345}
@@ -3956,7 +3956,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e5607aefbdc838843b61c4aa686ecd2b, type: 3}
   - {fileID: 8300000, guid: 3725f0b2904a23048ace683a837042b8, type: 3}
   - {fileID: 8300000, guid: 52c81f0cc0145e446adfe355d4ddceb3, type: 3}
-  - {fileID: 8300000, guid: ee8e97733e4acc147a13cc697df602e4, type: 3}
+  - {fileID: 8300000, guid: cfa9cbd4a41d5f84c821e9ccbe1d7daf, type: 3}
   - {fileID: 8300000, guid: d8bd806949e09b94fa2d2beac18bc981, type: 3}
   sliderVolMusica: {fileID: 309513206}
   sliderVolSFX: {fileID: 1534289705}
@@ -7565,7 +7565,7 @@ PrefabInstance:
     - target: {fileID: 1687066446660904834, guid: a0db9a090cac81c42a5a6889d6088da6,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 189.5
+      value: 200.6
       objectReference: {fileID: 0}
     - target: {fileID: 1687066446660904834, guid: a0db9a090cac81c42a5a6889d6088da6,
         type: 3}
@@ -7575,7 +7575,7 @@ PrefabInstance:
     - target: {fileID: 1687066446660904834, guid: a0db9a090cac81c42a5a6889d6088da6,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 66
+      value: 89.1
       objectReference: {fileID: 0}
     - target: {fileID: 1687066446660904834, guid: a0db9a090cac81c42a5a6889d6088da6,
         type: 3}
@@ -7708,7 +7708,7 @@ PrefabInstance:
     - target: {fileID: 4619732000924650869, guid: c4bfea98eaf348e409ad174c91288023,
         type: 3}
       propertyPath: m_Speed
-      value: 13
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4619732000924650869, guid: c4bfea98eaf348e409ad174c91288023,
         type: 3}

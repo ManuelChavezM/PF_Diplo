@@ -65,13 +65,7 @@ public class EnemyController : MonoBehaviour
                 //perseguir al jugador asignandole la posicion del jugador a partir de su transform
                 // SetDestiantion aplica funciona en el Swicht
                 enemyAgent.SetDestination(playerTransform.position);  //Validar si alcanza al jugador
-                /*if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[1])
-                {
-                    AudioManager.instanceAudioManager.PlayMusic(1);
-                }*/
-                   
-                
-                    
+        
                 if (enemyAgent.velocity.sqrMagnitude == 0)
                 {
                     currentState = EnemyState.ATTACK;
@@ -177,13 +171,14 @@ public class EnemyController : MonoBehaviour
 
         if (enemyAnimator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
         {
+
             tiempoDamage += Time.deltaTime;
             if (tiempoDamage >= tiempoDamageContado)
             {
+                vidaJugador.vida = vidaJugador.vida - 3;
                 tiempoDamage = 0f;
                 D++;
                 AudioManager.instanceAudioManager.PlaySFX(SFXType.DAMAGE);
-                vidaJugador.vida = vidaJugador.vida - 1;
                 Debug.Log("Haciendo daño: " + D);
             }
 
@@ -191,7 +186,7 @@ public class EnemyController : MonoBehaviour
 
     }
 
-    public void ReduccionVida()
+    public void ReduccionVida(float danio)
     {
         if (currentState == EnemyState.PATROL)
         {
@@ -199,20 +194,14 @@ public class EnemyController : MonoBehaviour
             CancelInvoke("GenerateRandomDestination");
         }
         AudioManager.instanceAudioManager.PlaySFX(SFXType.ENEMY);
-        Vida = Vida - 5f;
+        Vida = Vida - danio;
 
     }
 
     public void VidaCero()
     {
         Drop();
-        AudioManager.instanceAudioManager.ReproduccionPatrulla = false;
-        AudioManager.instanceAudioManager.ReproduccionChase = false;
-        if (AudioManager.instanceAudioManager.musica.clip != AudioManager.instanceAudioManager.musicaCollection[0])
-        {
-            AudioManager.instanceAudioManager.PlayMusic(0);
-
-        }
+       
         Destroy(this.gameObject);
     }
 

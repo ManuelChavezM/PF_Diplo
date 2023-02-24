@@ -43,7 +43,7 @@ public class Knife : MonoBehaviour
                 enemigo = mouseHit.collider.gameObject;
                 if (enemigo.tag == "Enemy")
                 {
-                    enemigo.GetComponent<EnemyController>().ReduccionVida();
+                    enemigo.GetComponent<EnemyController>().ReduccionVida(1.0f);
                     AudioManager.instanceAudioManager.PlaySFX(SFXType.HIT);
                     Instantiate(Blood, mouseHit.point, Quaternion.identity);
                     Debug.DrawRay(mouseRay.origin, mouseRay.direction, Color.red, 10f);

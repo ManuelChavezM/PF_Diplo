@@ -51,7 +51,8 @@ public class BossController : MonoBehaviour
 
         currentState = BossState.CHASE;
 
-        
+        enemyAgent.speed = 8.0f;
+
         AudioManager.instanceAudioManager.PlaySFX(SFXType.RUGIDO);
        
 
@@ -89,18 +90,9 @@ public class BossController : MonoBehaviour
             case BossState.DIE:
                 enemyAnimator.SetTrigger("Die");
                 enemyAgent.SetDestination(GetComponent<Transform>().position);
-                if (tiempoMax == 3)
-                {
-                    muro1.SetActive(false);
-                    muro2.SetActive(false);
-
-                    VidaCero();
-                }
-                else
-                {
-                    HacerTiempo();
-                }
-
+                 muro1.SetActive(false);
+                 muro2.SetActive(false);
+                 VidaCero();
                 break;
 
             case BossState.GHOST:
@@ -128,6 +120,21 @@ public class BossController : MonoBehaviour
         }
 
         Lifebar();
+
+        if(tiempoMax == 10)
+        {
+            
+            enemyAgent.speed = 18f;
+            enemyAgent.acceleration = 10f;
+        }
+        if(tiempoMax == 20)
+        {
+            enemyAgent.speed = 8f;
+            enemyAgent.acceleration = 8f;
+            tiempoMax = 0;
+        }
+            HacerTiempo();
+        
 
     }
 
