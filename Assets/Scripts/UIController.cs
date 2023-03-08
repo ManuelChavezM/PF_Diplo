@@ -2,15 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.IO;
 
 public class UIController : MonoBehaviour
 {
     public GameObject panelPrincipal;
     public GameObject panelAbout;
+    public GameObject btnContinuar;
 
     public void Play()
     {
-        SceneManager.LoadScene(1);
+        if (File.Exists(Application.persistentDataPath + "/" + "Data.json"))
+        {
+            File.Delete(Application.persistentDataPath + "/" + "Data.json");
+            SceneManager.LoadScene(1);
+        }
+        else
+        {
+            SceneManager.LoadScene(1);
+        }
+        
+    }
+
+    public void Continuar()
+    {
+        SceneManager.LoadScene(2);
     }
 
     public void ShowAbout()
@@ -41,6 +57,10 @@ public class UIController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (File.Exists(Application.persistentDataPath + "/" + "Data.json"))
+        {
+            btnContinuar.SetActive(true);
+        }
+
     }
 }
