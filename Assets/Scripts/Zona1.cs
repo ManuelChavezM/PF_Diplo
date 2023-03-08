@@ -13,6 +13,7 @@ public class Zona1 : MonoBehaviour
         {
             if (spawn01.activeInHierarchy == false)
             {
+                txtMision.instanceMision.txt1();
                 spawn01.SetActive(true);
                 SPC0.SetActive(false);
 

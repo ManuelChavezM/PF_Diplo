@@ -14,4 +14,6 @@ public class Data
     public bool SPC2 = true;
     public bool SPC3 = true;
 
+    public string txtMision;
+
 }

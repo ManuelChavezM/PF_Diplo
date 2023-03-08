@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.IO;
+using TMPro;
 
 public class SaveLoadSystem : MonoBehaviour
 {
@@ -23,7 +24,8 @@ public class SaveLoadSystem : MonoBehaviour
     public GameObject SPC3;
 
     public GameObject cameraIntro;
-    
+    public TMP_Text TXTmision;
+
     public void Awake()
     {
         Load();
@@ -32,6 +34,7 @@ public class SaveLoadSystem : MonoBehaviour
 
     public void Save()
     {
+        
         playerData.playerPosition = PLAYER.transform.position;
         playerData.vida = VIDA.vida;
         playerData.balas = MUNICION.Municion;
@@ -41,6 +44,8 @@ public class SaveLoadSystem : MonoBehaviour
         playerData.SPC1 = SPC1.activeInHierarchy;
         playerData.SPC2 = SPC2.activeInHierarchy;
         playerData.SPC3 = SPC3.activeInHierarchy;
+
+        playerData.txtMision = TXTmision.text;
 
         sw = new StreamWriter(Application.persistentDataPath + "/" + fileName,false);
         Debug.Log(Application.persistentDataPath + "/" + fileName);
@@ -73,9 +78,11 @@ public class SaveLoadSystem : MonoBehaviour
             SPC2.SetActive(playerData.SPC2);
             SPC3.SetActive(playerData.SPC3);
 
+            TXTmision.text = playerData.txtMision;
+
             sr.Close();
 
-            cameraIntro.transform.position = playerData.playerPosition; 
+            cameraIntro.transform.position = playerData.playerPosition;
 
         }
         else

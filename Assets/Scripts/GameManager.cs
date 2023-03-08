@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public GameObject panelGameplay;
     public GameObject panelPausa;
     public GameObject panelOpciones;
+    public GameObject panelCargando;
     public TMP_Text txtBalas;
     public TMP_Text txtCargador;
     public Image imgVida;
@@ -29,6 +30,7 @@ public class GameManager : MonoBehaviour
         panelPausa.SetActive(false);
         panelOpciones.SetActive(false);
         panelGameplay.SetActive(true);
+        panelCargando.SetActive(false);
         AudioManager.instanceAudioManager.musica.UnPause();
         AudioManager.instanceAudioManager.ambiente.Play();
        
@@ -40,6 +42,7 @@ public class GameManager : MonoBehaviour
         panelPausa.SetActive(true);
         panelGameplay.SetActive(false);
         panelOpciones.SetActive(false);
+        panelCargando.SetActive(false);
         AudioManager.instanceAudioManager.musica.Pause();
         AudioManager.instanceAudioManager.ambiente.Pause();
        
@@ -51,7 +54,16 @@ public class GameManager : MonoBehaviour
         panelPausa.SetActive(false);
         panelGameplay.SetActive(false);
         panelOpciones.SetActive(true);
-        
+        panelCargando.SetActive(false);
+
+    }
+
+    public void Cargando()
+    {
+        panelCargando.SetActive(true);
+        panelPausa.SetActive(false);
+        panelGameplay.SetActive(false);
+        panelOpciones.SetActive(false);
     }
 
 

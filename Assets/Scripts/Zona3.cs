@@ -16,6 +16,7 @@ public class Zona3 : MonoBehaviour
     {
         if (other.transform.CompareTag("Player"))
         {
+            txtMision.instanceMision.txt3();
             Rex.SetActive(true);
             muro1.SetActive(true);
             muro2.SetActive(true);

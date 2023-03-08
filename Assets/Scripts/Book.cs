@@ -10,6 +10,7 @@ public class Book : MonoBehaviour
         Debug.Log("Collision with: " + other.gameObject.name);
         if (other.transform.CompareTag("Player"))
         {
+            GameManager.instanceGameManager.Cargando();
             SceneManager.LoadScene(3);
         }
     }

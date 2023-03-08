@@ -17,6 +17,7 @@ public class Zona2 : MonoBehaviour
         {
             if(spawn02.activeInHierarchy == false)
             {
+                txtMision.instanceMision.txt2();
                 spawn02.SetActive(true);
                 spawn03.SetActive(true);
 

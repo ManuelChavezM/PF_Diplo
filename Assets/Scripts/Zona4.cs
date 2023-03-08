@@ -14,6 +14,7 @@ public class Zona4 : MonoBehaviour
         {
             if (spawn04.activeInHierarchy == false)
             {
+                txtMision.instanceMision.txt4();
                 spawn04.SetActive(true);
                 spawn05.SetActive(true);
                 SPC3.SetActive(false);
