@@ -25,7 +25,7 @@ public class FPController : MonoBehaviour
 
     private void Start()
     {
-        vidaMAX = vida;
+        vidaMAX = 10f;
         //se le indica que traiga el componente rgidbody 
         fprb = GetComponent<Rigidbody>();
         locked = true;

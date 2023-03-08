@@ -7,6 +7,7 @@ public class Zona2 : MonoBehaviour
  
     public GameObject spawn02;
     public GameObject spawn03;
+    public GameObject SPC1;
 
 
 
@@ -18,6 +19,8 @@ public class Zona2 : MonoBehaviour
             {
                 spawn02.SetActive(true);
                 spawn03.SetActive(true);
+
+                SPC1.SetActive(false);
 
             }
 

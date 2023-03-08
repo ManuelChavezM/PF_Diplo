@@ -7,6 +7,8 @@ public class Zona3 : MonoBehaviour
     public GameObject Rex;
     public GameObject muro1;
     public GameObject muro2;
+    public GameObject SPC2;
+
 
 
 
@@ -17,7 +19,8 @@ public class Zona3 : MonoBehaviour
             Rex.SetActive(true);
             muro1.SetActive(true);
             muro2.SetActive(true);
-            Destroy(this.gameObject);
+            SPC2.SetActive(false);
+           // Destroy(this.gameObject);
 
         }
     }

@@ -6,6 +6,7 @@ public class Zona4 : MonoBehaviour
 {
     public GameObject spawn04;
     public GameObject spawn05;
+    public GameObject SPC3;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -15,6 +16,7 @@ public class Zona4 : MonoBehaviour
             {
                 spawn04.SetActive(true);
                 spawn05.SetActive(true);
+                SPC3.SetActive(false);
 
             }
 

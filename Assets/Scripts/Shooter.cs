@@ -11,13 +11,8 @@ public class Shooter : MonoBehaviour
 
     public int Municion;
     public GameObject chispa;
-   
 
-    private void Start()
-    {
-        Municion = 5;
-    }
-
+    
 
 
     // Update is called once per frame
