@@ -19,7 +19,9 @@ public enum SFXType
     BOSSWALK,
     BOSSDIE,
     RUGIDO,
-    ALERT
+    ALERT,
+    HEAL,
+    TOCAR
 
 };
 
@@ -64,7 +66,7 @@ public class AudioManager : MonoBehaviour
         switch(sfxType)
         {
             case SFXType.WALK:
-                if (!SFX.isPlaying)
+                if (!SFX.isPlaying && GameManager.instanceGameManager.panelGameplay.activeInHierarchy == true)
                 {
                     SFX.PlayOneShot(sfxCollection[0]);
                 }
@@ -107,6 +109,12 @@ public class AudioManager : MonoBehaviour
                 break;
             case SFXType.ALERT:
                 SFX.PlayOneShot(sfxCollection[13]);
+                break;
+            case SFXType.HEAL:
+                SFX.PlayOneShot(sfxCollection[14]);
+                break;
+            case SFXType.TOCAR:
+                SFX.PlayOneShot(sfxCollection[15]);
                 break;
 
         }

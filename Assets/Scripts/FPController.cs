@@ -87,6 +87,7 @@ public class FPController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R) && GameManager.instanceGameManager.Cura != 0 && vida!=vidaMAX)
         {
+            AudioManager.instanceAudioManager.PlaySFX(SFXType.HEAL);
             GameManager.instanceGameManager.RestaCura();
             vida = vidaMAX;
             LifeValue = vida / vidaMAX;
@@ -115,7 +116,7 @@ public class FPController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Cargador")
         {
-            
+            AudioManager.instanceAudioManager.PlaySFX(SFXType.TOCAR);
             GameManager.instanceGameManager.SumaMagazine();
             Destroy(collision.gameObject);
 
@@ -123,6 +124,7 @@ public class FPController : MonoBehaviour
 
         if (collision.gameObject.tag == "Cura")
         {
+            AudioManager.instanceAudioManager.PlaySFX(SFXType.TOCAR);
             GameManager.instanceGameManager.SumaCura();
             Destroy(collision.gameObject);
 

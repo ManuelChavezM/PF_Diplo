@@ -152,7 +152,7 @@ public class EnemyController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Collision with: " + other.gameObject.name);
+       // Debug.Log("Collision with: " + other.gameObject.name);
         if (other.transform.CompareTag("Player"))
         {
             enemyAnimator.SetBool("playerDetectado", true);
@@ -179,7 +179,7 @@ public class EnemyController : MonoBehaviour
                 tiempoDamage = 0f;
                 D++;
                 AudioManager.instanceAudioManager.PlaySFX(SFXType.DAMAGE);
-                Debug.Log("Haciendo daño: " + D);
+               // Debug.Log("Haciendo daño: " + D);
             }
 
         }
@@ -239,7 +239,7 @@ public class EnemyController : MonoBehaviour
     public void Drop()
     {
         result = Random.Range(1f,2f);
-        Debug.Log(result);
+        //Debug.Log(result);
         if(result  <= 1.7f)
         {
             Instantiate(Cargador, GetComponent<Transform>().position, Quaternion.identity);

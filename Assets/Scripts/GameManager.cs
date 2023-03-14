@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
     }
     public void Pausa()
     {
-        Time.timeScale = 0; //detener todos los procesos con animacion y codigo pero no de interfaz
+        Time.timeScale = 0; //detener todos los procesos con animacion y codigo pero no de interfa
         AudioManager.instanceAudioManager.PlaySFX(SFXType.BUTTON);
         panelPausa.SetActive(true);
         panelGameplay.SetActive(false);
@@ -72,6 +72,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape) && panelGameplay.activeInHierarchy)
         {
+           
             Pausa();
         }
         TextoCargador(magazine);
@@ -123,6 +124,7 @@ public class GameManager : MonoBehaviour
     {
         txtCura.text = "" + cura;
     }
+
 
     public void Salir()
     {
