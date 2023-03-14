@@ -8,6 +8,7 @@ public class Zona3 : MonoBehaviour
     public GameObject muro1;
     public GameObject muro2;
     public GameObject SPC2;
+    public GameObject Trampas;
 
 
 
@@ -21,6 +22,7 @@ public class Zona3 : MonoBehaviour
             muro1.SetActive(true);
             muro2.SetActive(true);
             SPC2.SetActive(false);
+            Trampas.SetActive(true);
            // Destroy(this.gameObject);
 
         }

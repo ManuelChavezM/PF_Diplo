@@ -6,30 +6,29 @@ public class Trampa : MonoBehaviour
 {
     public int numeroEnemys;
     public GameObject EnemigoPrefab;
-    private GameObject enemigo;
-    public GameObject[] cajaEnemigos;
     public Transform spawn;
+
+    private bool activo = false;
 
     void Start()
     {
         spawn = GetComponent<Transform>();
-        
     }
 
     public void Emboscada()
     {
-        for (int i = 0; i < numeroEnemys; i++)
-        {
-            enemigo = Instantiate(EnemigoPrefab, spawn.position + new Vector3(i, 0f, -i), Quaternion.identity);
-            cajaEnemigos[i] = enemigo;
-        }
+        
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.transform.CompareTag("Player"))
+        if (other.transform.CompareTag("Player") &&  activo == false)
         {
-            Emboscada();
+            activo = true; //  que ya se activo el spawn
+            for (int i = 0; i < numeroEnemys; i++)
+            {
+                Instantiate(EnemigoPrefab, spawn.position + new Vector3(i, 0f, -i),other.transform.localRotation * new Quaternion(1,1,-1,1));
+            }
         }
     }
 
