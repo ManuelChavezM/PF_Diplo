@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     public GameObject panelPrincipal;
     public GameObject panelAbout;
     public GameObject btnContinuar;
+    public GameObject panelControlles;
 
     public void Play()
     {
@@ -32,12 +33,21 @@ public class UIController : MonoBehaviour
     public void ShowAbout()
     {
         panelAbout.SetActive(true);
+        panelControlles.SetActive(false);
         panelPrincipal.SetActive(false);
     }
 
-    public void Back()
+    public void Siguiente()
     {
         panelAbout.SetActive(false);
+        panelControlles.SetActive(true);
+        panelPrincipal.SetActive(false);
+    }
+
+    public void menuPrincipal()
+    {
+        panelAbout.SetActive(false);
+        panelControlles.SetActive(false);
         panelPrincipal.SetActive(true);
     }
 
@@ -51,6 +61,7 @@ public class UIController : MonoBehaviour
     void Start()
     {
         panelAbout.SetActive(false);
+        panelControlles.SetActive(false);
         panelPrincipal.SetActive(true);
     }
 
