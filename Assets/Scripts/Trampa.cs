@@ -15,11 +15,6 @@ public class Trampa : MonoBehaviour
         spawn = GetComponent<Transform>();
     }
 
-    public void Emboscada()
-    {
-        
-    }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.transform.CompareTag("Player") &&  activo == false)

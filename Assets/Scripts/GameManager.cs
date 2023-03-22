@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instanceGameManager;
@@ -129,8 +130,15 @@ public class GameManager : MonoBehaviour
     public void Salir()
     {
         AudioManager.instanceAudioManager.PlaySFX(SFXType.BUTTON);
-        Debug.Log("SALISTE DEL JUEGO");
+        //Debug.Log("SALISTE DEL JUEGO");
         Application.Quit();
+    }
+
+    public void menu()
+    {
+        AudioManager.instanceAudioManager.PlaySFX(SFXType.BUTTON);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(0);
     }
 
     public void Lifebar()
