@@ -2898,7 +2898,7 @@ MonoBehaviour:
   patrolRange: {x: 20, y: 20}
   patrolTime: 10
   vidaJugador: {fileID: 0}
-  Vida: 15
+  Vida: 10
   vidaMax: 0
   imgVida: {fileID: 1216834483208714781}
   Cargador: {fileID: 1034915773903631514, guid: b836f6f0361b1374b9f88d23dcfe3b11,
