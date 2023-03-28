@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         instanceGameManager = this;
+        Cursor.visible = false;
     }
 
     public void Continuar()
@@ -34,7 +35,8 @@ public class GameManager : MonoBehaviour
         panelCargando.SetActive(false);
         AudioManager.instanceAudioManager.musica.UnPause();
         AudioManager.instanceAudioManager.ambiente.Play();
-       
+        Cursor.visible = false;
+
     }
     public void Pausa()
     {
@@ -46,7 +48,7 @@ public class GameManager : MonoBehaviour
         panelCargando.SetActive(false);
         AudioManager.instanceAudioManager.musica.Pause();
         AudioManager.instanceAudioManager.ambiente.Pause();
-       
+
     }
 
     public void Opciones()
@@ -75,6 +77,7 @@ public class GameManager : MonoBehaviour
         {
            
             Pausa();
+            Cursor.visible = true;
         }
         TextoCargador(magazine);
         TextoCura(Cura);

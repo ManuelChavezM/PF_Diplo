@@ -6,6 +6,11 @@ public class Change : MonoBehaviour
 {
     public GameObject cambio;
     // Update is called once per frame
+
+    private void Awake()
+    {
+        Cursor.visible = false;
+    }
     void Update()
     {
         if (cambio.activeInHierarchy)
